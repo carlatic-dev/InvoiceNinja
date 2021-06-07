@@ -70,7 +70,7 @@
 
         <div class="row mt-4">
             <div class="col-md-4">
-                <b>Clientssssssss:</b><br>
+                <b>Client:</b><br>
                 $client_name<br>
                 $address1<br>
                 $address2<br>
