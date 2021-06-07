@@ -204,6 +204,6 @@ nlog($pdf);
             info($data['html']);
         }
 
-        return view('pdf.html', $data);
+        return view('pdff.html', $data);
     }
 }
