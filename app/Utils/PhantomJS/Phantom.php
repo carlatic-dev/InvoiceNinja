@@ -179,7 +179,7 @@ nlog($pdf);
         } else {
             $template = new PdfMakerDesign(strtolower($design->name));
         }
-
+        print_r($template);
         $state = [
             'template' => $template->elements([
                 'client' => $entity_obj->client,
@@ -204,6 +204,6 @@ nlog($pdf);
             info($data['html']);
         }
 
-        return view('pdff.html', $data);
+        return view('pdf.html', $data);
     }
 }
