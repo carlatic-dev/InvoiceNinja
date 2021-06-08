@@ -1,199 +1,251 @@
-<style id="style">
-    :root {
-        --primary-color: $primary_color;
-        --secondary-color: $secondary_color;
+ <style>
+    .invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color: #555;
     }
 
-    body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: "$font_size";
-        zoom: 80%;
-    }
-
-    @page {
-        margin: $global_margin;
-        size: $page_size $page_layout;
-    }
-
-    p {
-        margin: 0;
-        padding: 0;
-    }
-
-    .header-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .company-logo {
-        zoom: 50%; /** Adapt the zoom size, if you think it's necessary. **/
-    }
-
-    .header-wrapper #company-address {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .header-wrapper #entity-details {
-        margin-top: 1.5rem;
-        text-align: left;
+    .invoice-box table {
         width: 100%;
-    }
-
-    .header-wrapper #entity-details > tr,
-    .header-wrapper #entity-details th {
-        font-weight: normal;
-        padding-left: 0.9rem;
-        padding-top: 0.3rem;
-        padding-bottom: 0.3rem;
-    }
-
-    .header-wrapper
-    #entity-details
-    [data-element='entity-balance-due-label'],
-    .header-wrapper
-    #entity-details
-    [data-element='entity-balance-due'] {
-        background-color: #e6e6e6;
-    }
-
-    #client-details {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #product-table,
-    #delivery-note-table,
-    #task-table {
-        min-width: 100%;
-        table-layout: fixed;
-        overflow-wrap: break-word;
-        margin-top: 3rem;
-        /* margin-bottom: 200px; */
-    }
-
-    .task-time-details {
-        display: block;
-        margin-top: 5px;
-        color: grey;
-    }
-
-    #product-table > thead,
-    #delivery-note-table > thead,
-    #task-table > thead {
+        line-height: inherit;
         text-align: left;
     }
 
-    #product-table > thead > tr > th,
-    #delivery-note-table > thead > tr > th,
-    #task-table > thead > tr > th {
-        padding: 1rem;
-        background-color: #e6e6e6;
+    .invoice-box table td {
+        padding: 5px;
+        vertical-align: top;
+        padding: 1em 0;
     }
 
-    #product-table > thead > tr > th:last-child,
-    #delivery-note-table > thead > tr > th:last-child,
-    #task-table > thead > tr > th:last-child {
+    .invoice-box table tr td:nth-child(2) {
         text-align: right;
     }
 
-    #product-table > tbody > tr > td,
-    #delivery-note-table > tbody > tr > td,
-    #task-table > tbody > tr > td {
-        border-bottom: 1px solid #e6e6e6;
-        padding: 1rem;
+    .invoice-box table tr.top table td {
+        padding-bottom: 20px;
     }
 
-    #product-table > tbody > tr > td:last-child,
-    #delivery-note-table > tbody > tr > td:last-child,
-    #task-table > tbody > tr > td:last-child {
-        text-align: right;
+    .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
     }
 
-    #table-totals {
-        page-break-inside: avoid;
+    input{margin-bottom: 5px;}
+
+    .invoice-box table tr.information table td {
+        padding-bottom: 40px;
     }
 
-    #table-totals {
-        margin-top: 1rem;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        padding-top: .5rem;
-        padding-left: 1rem;
-        gap: 80px;
-    }
-
-    #table-totals .totals-table-right-side>* {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    #table-totals>.totals-table-right-side>*> :nth-child(1) {
-        text-align: left;
-    }
-
-    #table-totals>.totals-table-right-side>*> :nth-child(2) {
-        text-align: right;
-    }
-
-    #table-totals
-    > *
-    [data-element='total-table-balance-due-label'],
-    #table-totals
-    > *
-    [data-element='total-table-balance-due'] {
+    .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 1px solid #ddd;
         font-weight: bold;
     }
 
-    #table-totals > * > :last-child {
+    .invoice-box table tr.details td {
+        padding-bottom: 20px;
+    }
+
+    .invoice-box table tr.item td {
+        border-bottom: 1px solid #eee;
+    }
+
+    .invoice-box table tr.item.last td {
+        border-bottom: none;
+    }
+
+    .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+        padding: 1em 0;
+    }
+
+    th {
+        border-top: 1px solid #f2f2f2;
+        border-bottom: 1px solid #eee;
+        color: #111;
+        padding: 1em 0;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+
+        .invoice-box table tr.information table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+
+        }
+    }
+
+    /** RTL **/
+    .invoice-box.rtl {
+        direction: rtl;
+        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    }
+
+    .invoice-box.rtl table {
         text-align: right;
-        padding-right: 1rem;
     }
 
-    [data-ref="total_table-footer"] {
-        padding-left: 1rem
+    .invoice-box.rtl table tr td:nth-child(2) {
+        text-align: left;
     }
 
-    #footer {
-        margin-top: 30px;
+    .alnright {
+        text-align: right;
     }
 
-    [data-ref="totals_table-outstanding"] {
-        color: var(--primary-color)
+    .title_main {
+        text-transform: uppercase;
     }
-</style>
+
+    .w-100 {
+        width: 100%;
+    }
+
+    .float-left {
+        float: left;
+    }
+
+
+    .invoice-box table tr.table_footer td:nth-child(2) {
+        text-align: left;
+    }
+
+    .table-bordered td {
+        border-top: 1px solid #ddd;
+    }
+    </style>
 <div id="header"></div>
 
 <div id="body">
-    <div class="header-wrapper">
-        <div id="company-details"></div>
-        <div id="company-address"></div>
-
-        <div>
-            <img
-                class="company-logo"
-                src="$company.logo"
-                alt="$company.name logo"
-            />
-
-            <table id="entity-details" cellspacing="0"></table>
-        </div>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="6">
+                    <table>
+                        <tr>
+                            <td class="title alnright">
+                                <img src="img/logo.jpg" style="width: 100%; max-width: 300px" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="information">
+                <td colspan="6">
+                    <table>
+                        <tr>
+                            <td>
+                                <strong class="w-100 float-left  title_main">innovice/offer address</strong>
+                                <span>company (if existing)</span><br>
+                                <span>title + first + last name</span><br>
+                                <span>street address field l</span><br>
+                                <span>street address field ll (if existing)</span><br>
+                                <span>post code + city</span><br>
+                                <span>country</span><br>
+                            </td>
+                            <td>
+                                <strong class="w-100 float-left  title_main">Delivery Address</strong>
+                                <span>company (if existing)</span><br>
+                                <span>title + first + last name</span><br>
+                                <span>street address field l</span><br>
+                                <span>street address field ll (if existing)</span><br>
+                                <span>post code + city</span><br>
+                                <span>country</span><br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="information">
+                <td colspan="6">
+                    <table>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                <strong class="w-100 float-left  title_main">Delivery Address</strong>
+                                <span>company (if existing)</span><br>
+                                <span>title + first + last name</span><br>
+                                <span>street address field l</span><br>
+                                <span>street address field ll (if existing)</span><br>
+                                <span>post code + city</span><br>
+                                <span>country</span><br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="information">
+                <td colspan="6">
+                    <table>
+                        <tr>
+                            <td>
+                                <strong class="w-100 float-left  title_main">Salutation</strong>
+                                <span>Dear Mrs</span><br>
+                                <span>dear sir</span><br>
+                                <span>dear ladies and gentlemen</span><br>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th class="Artikelnr">Artikelnr</th>
+                <th class="Bezeichnung">Bezeichnung</th>
+                <th class="Enh">Enh</th>
+                <th class="Menge">Menge</th>
+                <th class="Einzelpreis">Einzelpreis</th>
+                <th class="G-Preis ">G-Preis $</th>
+            </tr>
+            <tr class="table_footer">
+                <td class="Artikelnr">Artikelnr</td>
+                <td class="Bezeichnung">Activate Webcam Deluxe</td>
+                <td class="Enh">Stuck</td>
+                <td class="Menge">1,00</td>
+                <td class="Einzelpreis">39,00</td>
+                <td class="G-Preis">39,00</td>
+            </tr>
+            <tr class="table_footer table-bordered">
+                <td colspan="4">&nbsp;</td>
+                <td><strong>Summer In $</strong></td>
+                <td><strong>$39</strong></td>
+            </tr>
+            <tr class="table_footer table-bordered">
+                <td colspan="4">&nbsp;</td>
+                <td><strong>Summer In $</strong></td>
+                <td><strong>$39</strong></td>
+            </tr>
+            <tr class="table_footer">
+                <td class="w-100 float-left"> 
+                    <span style="display: block;">Payment method</span>
+                    <span style="display: block;">Delivery method</span>
+                        <span style="display: block;"><input type="text" placeholder="text field 1"></span>
+                        <span style="display: block;"><input type="text" placeholder="text field 2"></span>
+                </td>
+            </tr>
+        </table>
     </div>
-
-    <div id="client-details"></div>
-
-    <table id="product-table" cellspacing="0"></table>
-
-    <table id="task-table" cellspacing="0"></table>
-
-    <table id="delivery-note-table" cellspacing="0"></table>
-
-    <div id="table-totals" cellspacing="0"></div>
 </div>
 
+
 <div id="footer">
+
     <p data-ref="total_table-footer">$entity_footer</p>
 
     <script>
