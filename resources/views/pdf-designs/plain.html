@@ -150,21 +150,21 @@
                         <tr>
                             <td>
                                 <strong class="w-100 float-left  title_main">innovice/offer address</strong>
-                                <span>company (if existing)</span><br>
-                                <span>title + first + last name</span><br>
-                                <span>street address field l</span><br>
-                                <span>street address field ll (if existing)</span><br>
-                                <span>post code + city</span><br>
-                                <span>country</span><br>
+                                <span>$company.name</span><br>
+                                <!-- <span>title + first + last name</span><br> -->
+                                <span>$company.address</span><br>
+                                <!-- <span>street address field ll (if existing)</span><br> -->
+                                <span>$phone</span><br>
+                                <span>$email</span><br>
                             </td>
                             <td>
                                 <strong class="w-100 float-left  title_main">Delivery Address</strong>
-                                <span>company (if existing)</span><br>
-                                <span>title + first + last name</span><br>
-                                <span>street address field l</span><br>
-                                <span>street address field ll (if existing)</span><br>
-                                <span>post code + city</span><br>
-                                <span>country</span><br>
+                                <span>$client_name</span><br>
+                                <!-- <span>title + first + last name</span><br> -->
+                                <span>$address1</span><br>
+                                <span>$address2</span><br>
+                                <span>$city_state_postal</span><br>
+                                <span>$country</span><br>
                             </td>
                         </tr>
                     </table>
@@ -172,26 +172,7 @@
             </tr>
             <tr class="information">
                 <td colspan="6">
-                    <table>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                                <strong class="w-100 float-left  title_main">Delivery Address</strong>
-                                <span>company (if existing)</span><br>
-                                <span>title + first + last name</span><br>
-                                <span>street address field l</span><br>
-                                <span>street address field ll (if existing)</span><br>
-                                <span>post code + city</span><br>
-                                <span>country</span><br>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr class="information">
-                <td colspan="6">
-                    <table>
+                    <table >
                         <tr>
                             <td>
                                 <strong class="w-100 float-left  title_main">Salutation</strong>
@@ -205,22 +186,10 @@
                     </table>
                 </td>
             </tr>
-            <tr>
-                <th class="Artikelnr">Artikelnr</th>
-                <th class="Bezeichnung">Bezeichnung</th>
-                <th class="Enh">Enh</th>
-                <th class="Menge">Menge</th>
-                <th class="Einzelpreis">Einzelpreis</th>
-                <th class="G-Preis ">G-Preis $</th>
+            <tr id="product-table">
+                
             </tr>
-            <tr class="table_footer">
-                <td class="Artikelnr">Artikelnr</td>
-                <td class="Bezeichnung">Activate Webcam Deluxe</td>
-                <td class="Enh">Stuck</td>
-                <td class="Menge">1,00</td>
-                <td class="Einzelpreis">39,00</td>
-                <td class="G-Preis">39,00</td>
-            </tr>
+            
             <tr class="table_footer table-bordered">
                 <td colspan="4">&nbsp;</td>
                 <td><strong>Summer In $</strong></td>
