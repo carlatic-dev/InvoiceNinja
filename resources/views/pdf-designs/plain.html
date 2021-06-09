@@ -168,13 +168,50 @@
 
 <div id="body">
 
+    <tr class="top">
+                <td colspan="6">
+                    <table>
+                        <tr>
+                            <td class="title alnright">
+                                <img src="$company.logo" style="width: 100%; max-width: 300px" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="information">
+                <td colspan="6">
+                    <table>
+                        <tr>
+                            <td>
+                                <strong class="w-100 float-left  title_main">innovice/offer address</strong>
+                                <span>$company.name</span><br>
+                                <!-- <span>title + first + last name</span><br> -->
+                                <span>$company.address</span><br>
+                                <!-- <span>street address field ll (if existing)</span><br> -->
+                                <span>$phone</span><br>
+                                <span>$email</span><br>
+                            </td>
+                            <td>
+                                <strong class="w-100 float-left  title_main">Delivery Address</strong>
+                                <span>$client_name</span><br>
+                                <!-- <span>title + first + last name</span><br> -->
+                                <span>$address1</span><br>
+                                <span>$address2</span><br>
+                                <span>$city_state_postal</span><br>
+                                <span>$country</span><br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
     <table id="product-table" cellspacing="0"></table>
 
     <table id="task-table" cellspacing="0"></table>
 
     <table id="delivery-note-table" cellspacing="0"></table>
 
-    <div id="table-totals" cellspacing="0"></div>
 </div>
 
 <div id="footer">
