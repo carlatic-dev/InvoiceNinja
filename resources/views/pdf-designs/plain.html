@@ -1,5 +1,47 @@
 <style id="style">
 
+    .header-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .company-logo {
+        zoom: 50%; /** Adapt the zoom size, if you think it's necessary. **/
+    }
+
+    .header-wrapper #company-address {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-wrapper #entity-details {
+        margin-top: 1.5rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    .header-wrapper #entity-details > tr,
+    .header-wrapper #entity-details th {
+        font-weight: normal;
+        padding-left: 0.9rem;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+    }
+
+    .header-wrapper
+    #entity-details
+    [data-element='entity-balance-due-label'],
+    .header-wrapper
+    #entity-details
+    [data-element='entity-balance-due'] {
+        background-color: #e6e6e6;
+    }
+
+    #client-details {
+        display: flex;
+        flex-direction: column;
+    }
+
     #product-table,
     #delivery-note-table,
     #task-table {
