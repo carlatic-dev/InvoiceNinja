@@ -106,29 +106,6 @@
     .rtl table tr td:nth-child(2) {
         text-align: left;
     }
-
-
-    #product-table > thead{
-        text-align: left;
-    }
-
-    #product-table > thead > tr > th {
-        padding: 1rem;
-        background-color: #e6e6e6;
-    }
-
-    #product-table > thead > tr > th:last-child,{
-        text-align: right;
-    }
-
-    #product-table > tbody > tr > td{
-        border-bottom: 1px solid #e6e6e6;
-        padding: 1rem;
-    }
-
-    #product-table > tbody > tr > td:last-child{
-        text-align: right;
-    }
     </style>
 </head>
 

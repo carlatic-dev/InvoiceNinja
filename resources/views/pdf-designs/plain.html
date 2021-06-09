@@ -127,6 +127,28 @@
     .table-bordered td {
         border-top: 1px solid #ddd;
     }
+
+    #product-table > thead{
+        text-align: left;
+    }
+
+    #product-table > thead > tr > th {
+        padding: 1rem;
+        background-color: #e6e6e6;
+    }
+
+    #product-table > thead > tr > th:last-child,{
+        text-align: right;
+    }
+
+    #product-table > tbody > tr > td{
+        border-bottom: 1px solid #e6e6e6;
+        padding: 1rem;
+    }
+
+    #product-table > tbody > tr > td:last-child{
+        text-align: right;
+    }
     </style>
 <div id="header"></div>
 
@@ -206,6 +228,16 @@
         </table>
     </div>
 </div>
+
+                $date
+                $discount
+                $product_key
+                $notes
+                $cost
+                $quantity
+                $tax_name1 
+                $tax_name2
+                $line_total
 
 
 <div id="footer">
