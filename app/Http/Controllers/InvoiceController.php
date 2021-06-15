@@ -789,14 +789,14 @@ class InvoiceController extends BaseController
      */
     public function downloadPdf($invitation_key)
     {
-        return "asdf";
         $invitation = $this->invoice_repo->getInvitationByKey($invitation_key);
         $contact = $invitation->contact;
         $invoice = $invitation->invoice;
 
-        $file = $invoice->service()->getInvoicePdf($contact);
+        print_r($invoice);
+        // $file = $invoice->service()->getInvoicePdf($contact);
 
-        return response()->download($file, basename($file), ['Cache-Control:' => 'no-cache'])->deleteFileAfterSend(true);;
+        // return response()->download($file, basename($file), ['Cache-Control:' => 'no-cache'])->deleteFileAfterSend(true);
 
     }
 
