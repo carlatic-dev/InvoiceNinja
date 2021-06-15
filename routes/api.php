@@ -88,12 +88,12 @@ Route::group(['middleware' => ['api_db', 'token_auth', 'locale'], 'prefix' => 'a
     Route::post('import_json', 'ImportJsonController@import')->name('import.import_json');
     Route::post('preimport', 'ImportController@preimport')->name('import.preimport');
 
-    Route::resource('invoices', 'InvoiceController'); // name = (invoices. index / create / show / update / destroy / edit
-    Route::get('invoices/{invoice}/delivery_note', 'InvoiceController@deliveryNote')->name('invoices.delivery_note');
-    Route::get('invoices/{invoice}/{action}', 'InvoiceController@action')->name('invoices.action');
-    Route::put('invoices/{invoice}/upload', 'InvoiceController@upload')->name('invoices.upload');
-    Route::get('invoice/{invitation_key}/download', 'InvoiceController@downloadPdf')->name('invoices.downloadPdf');
-    Route::post('invoices/bulk', 'InvoiceController@bulk')->name('invoices.bulk');
+    // Route::resource('invoices', 'InvoiceController'); // name = (invoices. index / create / show / update / destroy / edit
+    // Route::get('invoices/{invoice}/delivery_note', 'InvoiceController@deliveryNote')->name('invoices.delivery_note');
+    // Route::get('invoices/{invoice}/{action}', 'InvoiceController@action')->name('invoices.action');
+    // Route::put('invoices/{invoice}/upload', 'InvoiceController@upload')->name('invoices.upload');
+    // Route::get('invoice/{invitation_key}/download', 'InvoiceController@downloadPdf')->name('invoices.downloadPdf');
+    // Route::post('invoices/bulk', 'InvoiceController@bulk')->name('invoices.bulk');
     
     Route::post('logout', 'LogoutController@index')->name('logout');
 
