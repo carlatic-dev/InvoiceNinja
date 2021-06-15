@@ -23,7 +23,7 @@ class GetInvoicePdf extends AbstractService
     public function __construct(Invoice $invoice, ClientContact $contact = null)
     {
         $this->invoice = $invoice;
-
+        echo json_encode($invoice);
         $this->contact = $contact;
     }
 
