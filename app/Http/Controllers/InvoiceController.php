@@ -789,6 +789,7 @@ class InvoiceController extends BaseController
      */
     public function downloadPdf($invitation_key)
     {
+        return "asdf";
         $invitation = $this->invoice_repo->getInvitationByKey($invitation_key);
         $contact = $invitation->contact;
         $invoice = $invitation->invoice;
