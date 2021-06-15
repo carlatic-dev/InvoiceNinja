@@ -628,7 +628,7 @@ class InvoiceController extends BaseController
         return $this->performAction($invoice, $action);
     }
 
-    private function performAction(Invoice $invoice, $action, $bulk = false)
+    private function performActiondddddd(Invoice $invoice, $action, $bulk = false)
     {
         /*If we are using bulk actions, we don't want to return anything */
         switch ($action) {
